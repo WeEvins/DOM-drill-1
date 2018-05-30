@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    const colorArray = ['#E8CCD7', '#CCCCFF', '#BD33A4', '#ED872D', '#29AB87', '#C9A0DC', '#3AA8C1', '#FED85D']
+
     // here i am defining my variables in a big chuck just for easy reading
     let paragraph = document.createElement('p');
     let div = document.createElement('div');
@@ -45,46 +47,71 @@ document.addEventListener('DOMContentLoaded', function () {
     div.appendChild(paragraph);
     document.body.appendChild(div);
 
+    h1.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h1.style.color = rand;
+    };
+
+    h2.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h2.style.color = rand;
+    };
+
+    h3.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h3.style.color = rand;
+    };
+
+    h4.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h4.style.color = rand;
+    };
+
+    h5.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h5.style.color = rand;
+    };
+
+    h6.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        h6.style.color = rand;
+    };
+
+
+
+    let buttonColor = document.createElement('button');
+    buttonColor.innerText = 'R.R. Party Town'
+    document.body.appendChild(buttonColor);
+
+    buttonColor.onclick = function () {
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        buttonColor.style.color = rand;
+    };
+
+    let buttonIndex = document.createElement('button');
+    buttonIndex.innerText = 'Count it!'
+    document.body.appendChild(buttonIndex);
+
+
+    let i = 0;  // i is counter for items in button list below
+
+    buttonIndex.onclick = function () {
+        i = (i + 1)
+        let listItem = document.createElement('li');
+        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
+        // not sure how to get i to increase each click
+        listItem.innerText = `This is list item ${i}`;
+        listItem.style.color = rand;
+        document.body.appendChild(listItem);
+    
+        //here i need to make this remove an li upon double click
+        listItem.addEventListener('dblclick', function (e) {
+            const targetItem = e.target;
+            targetItem.remove();
+        
+        })
+    };
+
+
 })
 
-// okay here I am trying to set up my color button
-const colorArray = ['#E8CCD7', '#CCCCFF', '#BD33A4', '#ED872D', '#29AB87', '#C9A0DC', '#3AA8C1', '#FED85D']
-
-//document.addEventListener('DOMContentLoaded', function () {
-//    h1.onclick = function () {
-//        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
-//        button.style.color = rand;
-//    };
-//)};
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    let button = document.createElement('button');
-    button.innerText = 'R.R. Party Town'
-    document.body.appendChild(button);
-
-    button.onclick = function () {
-        let rand = colorArray[Math.floor(Math.random() * colorArray.length)];
-        button.style.color = rand;
-    };
-});
-
-
-//holy shit my button works but apparently that wasnt right but i'm keeping it cause i fkin worked hard on it
-
-
-
-
-//and this is the increaing iteration button
-document.addEventListener('DOMContentLoaded', function () {
-    let button = document.createElement('button');
-    button.innerText = 'Click to add new list item'
-    document.body.appendChild(button);
-
-    button.addEventListener('click', function () {
-        let buttonParagraph = document.createElement('p')
-        p.innerText = 'this is text'
-
-    });
-});
